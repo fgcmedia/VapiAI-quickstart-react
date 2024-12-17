@@ -6,7 +6,7 @@ import Vapi from "@vapi-ai/web";
 import { isPublicKeyMissingError } from "./utils";
 
 // Put your Vapi Public Key below.
-const vapi = new Vapi("0000XXXX-XXXX-XXXX-XXXX-XXXXXXXX0000");
+const vapi = new Vapi("6f299ac1-3c63-4c36-8a58-0c27f2f91b2e");
 
 const App = () => {
   const [connecting, setConnecting] = useState(false);
@@ -79,7 +79,7 @@ const App = () => {
     >
       {!connected ? (
         <Button
-          label="Call Vapi’s Pizza Front Desk"
+          label="Appeler Greg Pizza"
           onClick={startCallInline}
           isLoading={connecting}
         />
@@ -98,16 +98,16 @@ const App = () => {
 };
 
 const assistantOptions = {
-  name: "Vapi’s Pizza Front Desk",
-  firstMessage: "Vappy’s Pizzeria speaking, how can I help you?",
+  name: "Accueil Greg Pizza",
+  firstMessage: "Greg Pizza bonjour, comment puis-je vous aider ?",
   transcriber: {
     provider: "deepgram",
     model: "nova-2",
-    language: "en-US",
+    language: "fr",
   },
   voice: {
-    provider: "playht",
-    voiceId: "jennifer",
+    provider: "cartesia",
+    voiceId: "65b25c5d-ff07-4687-a04c-da2f43ef6fa9",
   },
   model: {
     provider: "openai",
@@ -115,7 +115,7 @@ const assistantOptions = {
     messages: [
       {
         role: "system",
-        content: `You are a voice assistant for Vappy’s Pizzeria, a pizza shop located on the Internet.
+        content: `You are a voice assistant for Greg Pizza, a pizza shop located on the Internet.
 
 Your job is to take the order of customers calling in. The menu has only 3 types
 of items: pizza, sides, and drinks. There are no other types of items on the menu.
